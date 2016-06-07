@@ -5,26 +5,49 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import ckm.simple.sql_provider.annotation.SimpleSQLColumn;
+import ckm.simple.sql_provider.annotation.SimpleSQLTable;
+
 /**
  * Created by DELL on 5/8/2016.
  */
+@SimpleSQLTable(table = "movieTable", provider = "MovieProvider")
 public class Movie implements Parcelable {
-    @SerializedName("vote_average")
+   // @SerializedName("vote_average")
+   @SimpleSQLColumn("col_rating")
+   @SerializedName("vote_average")
     private String rating;
 
+    //@SerializedName("title")
+    @SimpleSQLColumn("col_title")
     @SerializedName("title")
     private String title;
 
+    //@SerializedName("poster_path")
+    @SimpleSQLColumn("col_poster")
     @SerializedName("poster_path")
     private String poster;
 
+    //@SerializedName("release_date")
+    @SimpleSQLColumn("col_rdate")
     @SerializedName("release_date")
     private String rdate;
 
+    //@SerializedName("overview")
+    @SimpleSQLColumn("col_overview")
     @SerializedName("overview")
     private String overview;
 
+   // @SerializedName("id")
+   @SimpleSQLColumn("col_id")
+   @SerializedName("id")
+    private  int id;
+
+    //@SerializedName("backdrop_path")
+    @SimpleSQLColumn("col_backdrop")
     @SerializedName("backdrop_path")
     private String backdrop;
 
@@ -37,6 +60,7 @@ public class Movie implements Parcelable {
         poster = in.readString();
         rdate =in.readString();
         overview = in.readString();
+        id=in.readInt();
         backdrop = in.readString();
     }
 
@@ -56,8 +80,11 @@ public class Movie implements Parcelable {
     };
 
     public String getRating() {
-        return rating + "/10";
+        return (rating ) ;
     }
+
+
+
     public void setRating(String rating) {
         this.rating = rating;}
 
@@ -89,6 +116,9 @@ public class Movie implements Parcelable {
         this.overview = overview;
     }
 
+    public int getId(){return id;}
+    public void setId(int id){this.id=id;}
+
     public String getBackdrop() {
         return "http://image.tmdb.org/t/p/w500"  + backdrop;
     }
@@ -108,11 +138,16 @@ public class Movie implements Parcelable {
         parcel.writeString(poster);
         parcel.writeString(rdate);
         parcel.writeString(overview);
+        parcel.writeInt(id);
         parcel.writeString(backdrop);
     }
 
+
     public static class MovieResult {
         private List<Movie> results;
+
+        MovieResult(List<Movie> l){results = l;}
+
         public List<Movie> getResults() {
             return results;
         }

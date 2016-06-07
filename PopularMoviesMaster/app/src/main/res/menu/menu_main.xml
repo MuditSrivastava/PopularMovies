@@ -6,4 +6,10 @@
         android:title="@string/action_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_fav"
+        android:orderInCategory="300"
+        android:title="@string/action_fav"
+        android:icon="@drawable/ic_favorite_white_24dp"
+        app:showAsAction="always" />
 </menu>

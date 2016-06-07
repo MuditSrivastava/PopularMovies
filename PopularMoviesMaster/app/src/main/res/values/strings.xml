@@ -4,9 +4,13 @@
     <string name="title_activity_movie_detail">Movie Detail</string>
     <string name="pref_sort_label">Sort Order</string>
     <string name="error_msg">Something Went Wrong!</string>
+    <string name="message">Sent via Popular Movies app</string>
     <string name="pref_sort_label_popular">Most Popular</string>
     <string name="pref_sort_label_rated">Top Rated</string>
     <string name="pref_sort_key" translatable="false">sort</string>
     <string name="pref_sort_popular" translatable="false">mostpopular</string>
     <string name="pref_sort_rated" translatable="false">toprated</string>
+    <string name="action_fav">Favourites</string>
+    <string name="add_fav">Added to Favourites</string>
+    <string name="rem_fav">Removed from Favourites</string>
 </resources>

@@ -12,4 +12,6 @@
         android:entryValues="@array/pref_sort_values"
         android:entries="@array/pref_sort_options" />
 
+
+
 </PreferenceScreen>
