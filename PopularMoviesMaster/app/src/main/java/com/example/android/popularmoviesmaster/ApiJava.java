@@ -12,7 +12,8 @@ public interface ApiJava {
     @GET("movie/popular?api_key="+BuildConfig.MOBDB_API_KEY)
     Call<Movie.MovieResult> getPopularMovies();
     //void getPopularMovies(Callback<Movie.MovieResult> cb);
-    @GET("movie/top_rated?api_key="+BuildConfig.MOBDB_API_KEY)
+    @GET("movie/top_rated?api_key="+BuildConfig.
+            MOBDB_API_KEY)
     Call<Movie.MovieResult> getRatedMovies();
     //void getRatedMovies(Callback<Movie.MovieResult> cb);
 

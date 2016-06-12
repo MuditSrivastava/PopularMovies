@@ -31,6 +31,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
@@ -111,7 +112,9 @@ public class MainActivity extends AppCompatActivity implements communicator {
 
 
         mAdapter = new MoviesAdapter(this);
-        mRecyclerView.setAdapter(mAdapter);
+        ScaleInAnimationAdapter scaleAdapter = new ScaleInAnimationAdapter(mAdapter);
+        scaleAdapter.setFirstOnly(false);
+        mRecyclerView.setAdapter(scaleAdapter);
 
 
 
