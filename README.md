@@ -23,7 +23,11 @@ You can obtain a key from [themoviedb.org](https://www.themoviedb.org)
 
 [Retrofit](http://square.github.io/retrofit/)
 
-[Wasabeef RecyclerView Animator](https://github.com/wasabeef/recyclerview-animators)
+[Simple SQL Provider](https://github.com/ckurtm/simple-sql-provider)
+
+[Wasabeef RecyclerView Animator](https://github.com/wasabeef/recyclerview-animators) 
+
+[balysv material-ripple](https://github.com/balysv/material-ripple)
 
 ## License
 
