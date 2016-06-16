@@ -1,5 +1,5 @@
-# Popular Movies Stage 1
-Android App to show Most Popular and Top Rated Movies.
+# Popular Movies (Final Stage) 
+Android App that display details of Most Popular and Top Rated Movies.
 
 Also displays Movies while using offline.
 
