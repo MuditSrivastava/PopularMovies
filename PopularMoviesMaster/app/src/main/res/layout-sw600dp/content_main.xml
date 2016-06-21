@@ -21,9 +21,6 @@
         android:name="com.example.android.popularmoviesmaster.MovieDetailFragment"
         android:id="@+id/fragment2"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-
         tools:layout="@layout/fragment_movie_detail" />
-
-
 
 </LinearLayout>
