@@ -12,7 +12,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.ShareActionProvider;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,8 +49,6 @@ public class MovieDetailFragment extends Fragment {
     private Trailers trailers;
     private TrailersAdapter trailersAdapter;
     ApiJava tmdbApi;
-    Intent shareIntent;
-    ShareActionProvider shareActionProvider;
     String Base_URL = "http://api.themoviedb.org/3/";
     Call<Reviews> callRv;
     private List<Trailers.SingleTrailer> listTr;
@@ -166,8 +163,7 @@ public class MovieDetailFragment extends Fragment {
             rating.setText(ratText);
             if(mMovie.getRating()!=null){
             float d = Float.parseFloat(mMovie.getRating());
-       rb.setRating((Math.round(d) / 2));}
-
+            rb.setRating((Math.round(d) / 2));}
             rdate.setText(mMovie.getRdate());
             title.setText(mMovie.getTitle());
             description.setText(mMovie.getOverview());
@@ -181,14 +177,7 @@ public class MovieDetailFragment extends Fragment {
                 f.setImageResource(R.drawable.ic_favorite_white_24dp);
             } else
                 f.setImageResource(R.drawable.ic_favorite_border_white_24dp);
-
-
-
         }
-
-
-
-
     }
 
     @Override
@@ -199,10 +188,6 @@ public class MovieDetailFragment extends Fragment {
         setHasOptionsMenu(true);
 
     }
-
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -217,7 +202,7 @@ public class MovieDetailFragment extends Fragment {
 //            throw new IllegalArgumentException("Detail activity must receive a movie parcelable");
         }
 
-      backdrop = (ImageView) view.findViewById(R.id.backdrop);
+        backdrop = (ImageView) view.findViewById(R.id.backdrop);
         rating = (TextView) view.findViewById(R.id.movie_rating);
         rdate = (TextView) view.findViewById(R.id.movie_rdate);
         title = (TextView) view.findViewById(R.id.movie_title);
@@ -229,7 +214,7 @@ public class MovieDetailFragment extends Fragment {
         f=(FloatingActionButton)view.findViewById(R.id.fab);
 
         trailersAdapter = new TrailersAdapter(listTr, getActivity());
-         rvTrailer = (RecyclerView) view.findViewById(R.id.trailerRv);
+        rvTrailer = (RecyclerView) view.findViewById(R.id.trailerRv);
         rvTrailer.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         rvTrailer.setAdapter(trailersAdapter);
         List<Trailers.SingleTrailer> items=new ArrayList<>();
@@ -268,11 +253,8 @@ public class MovieDetailFragment extends Fragment {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
             }
         });
-
-
     return  view;
     }
 }

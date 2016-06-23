@@ -4,5 +4,9 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#212121</color>
     <color name="fab">#FF4081</color>
-
+    <color name="horiz_line">#708090</color>
+    <color name="ripple">#A9A9A9</color>
+    <color name="r_text">#424242</color>
+    <color name="white">#FFF</color>
+    <color name="trailer_back">#CFD8DC</color>
 </resources>

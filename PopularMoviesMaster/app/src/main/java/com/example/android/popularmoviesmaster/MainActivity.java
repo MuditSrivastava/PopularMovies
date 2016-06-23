@@ -2,49 +2,23 @@ package com.example.android.popularmoviesmaster;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.database.Cursor;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
-
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Response;
-import okhttp3.internal.framed.FrameReader;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.GsonConverterFactory;
-import retrofit2.Retrofit;
-//import retrofit.RequestInterceptor;
-//import retrofit.RestAdapter;
-//import retrofit.RetrofitError;
-//import retrofit.client.Response;
-
 
 
 public class MainActivity extends AppCompatActivity implements communicator {
@@ -109,30 +83,20 @@ public class MainActivity extends AppCompatActivity implements communicator {
         }
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, noGrid));
-
-
         mAdapter = new MoviesAdapter(this);
         ScaleInAnimationAdapter scaleAdapter = new ScaleInAnimationAdapter(mAdapter);
         scaleAdapter.setFirstOnly(false);
         mRecyclerView.setAdapter(scaleAdapter);
 
-
-
-
-
         for (int i = 0; i < 25; i++) {
             movies.add(new Movie());
         }
         m= new Movie.MovieResult(movies);
-
-
         mAdapter.setMovieList(m);
         count++;
-         GETMOV=new getMov(mAdapter,this,b);
+        GETMOV=new getMov(mAdapter,this,b);
         GETMOV.progressDialog.show();
         GETMOV.execute();
-
-
     }
     @Override
     public void onStart()
@@ -154,8 +118,6 @@ public class MainActivity extends AppCompatActivity implements communicator {
 //            rv.setAdapter(adapter);
         }
     }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -176,22 +138,16 @@ public class MainActivity extends AppCompatActivity implements communicator {
             return true;
         }
 
-
         if (id == R.id.action_fav) {
-
-
                 favMovieAsList =MovieTableTable.getRows(this.getContentResolver().query(MovieTableTable.CONTENT_URI, null, null, null, null), true);
                 favAdapter = new MoviesAdapter(this);
                 Movie.MovieResult m2 = new Movie.MovieResult(favMovieAsList);
                 favAdapter.setMovieList(m2);
-                  favAdapter.notifyDataSetChanged();
+                favAdapter.notifyDataSetChanged();
                 mRecyclerView.setAdapter(favAdapter);
-
                 currstate = 3;
                 toolbar.setTitle("Favourites");
-
         }
-
         return super.onOptionsItemSelected(item);
     }
    // fm.getSupportFragmentManager().beginTransaction().replace(R.id.fragment2, f).commit();

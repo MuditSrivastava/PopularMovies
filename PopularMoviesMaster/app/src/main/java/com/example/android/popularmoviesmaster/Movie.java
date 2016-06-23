@@ -4,10 +4,7 @@ package com.example.android.popularmoviesmaster;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import ckm.simple.sql_provider.annotation.SimpleSQLColumn;
 import ckm.simple.sql_provider.annotation.SimpleSQLTable;
 
@@ -64,9 +61,6 @@ public class Movie implements Parcelable {
         backdrop = in.readString();
     }
 
-
-
-
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
         @Override
         public Movie createFromParcel(Parcel in) {
@@ -82,8 +76,6 @@ public class Movie implements Parcelable {
     public String getRating() {
         return (rating ) ;
     }
-
-
 
     public void setRating(String rating) {
         this.rating = rating;}

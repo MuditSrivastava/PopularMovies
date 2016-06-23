@@ -10,5 +10,5 @@
     android:background="?attr/colorPrimary"
     app:navigationIcon="?attr/homeAsUpIndicator"
     app:title="@string/action_settings"
-    app:titleTextColor="#FFFFFF"
+    app:titleTextColor="@color/white"
     />

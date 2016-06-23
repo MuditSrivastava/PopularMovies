@@ -61,10 +61,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
 
         @Override
         public void onClick(View v) {
-//            Uri reviewLink = Uri.parse(listReview.get(position).getUrl());
-//            Intent reviewIntent = new Intent(Intent.ACTION_VIEW,reviewLink);
-//            c.startActivity(reviewIntent);
-
             if(isTextViewClicked){
                 //This will shrink textview to 2 lines if it is expanded.
                 t.setMaxLines(4);

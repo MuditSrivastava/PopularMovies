@@ -3,11 +3,7 @@ package com.example.android.popularmoviesmaster;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.view.View;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -17,27 +13,31 @@ import retrofit2.Retrofit;
 /**
  * Created by DELL on 6/27/2016.
  */
-public class getMov extends AsyncTask<Void,Void,Movie.MovieResult>{
+public class getMov extends AsyncTask<Void, Void, Movie.MovieResult> {
 
-    private  MoviesAdapter mAdapter;
-     private Movie.MovieResult mR;
+    private MoviesAdapter mAdapter;
+    private Movie.MovieResult mR;
     private Context context;
     public ProgressDialog progressDialog;
     Boolean b;
-    public getMov(MoviesAdapter mAdapter,Context context, Boolean b){
-        this.mAdapter=mAdapter;
-        this.context=context;
-        this.b=b;
-        this.progressDialog= new ProgressDialog(context);
+
+    public getMov(MoviesAdapter mAdapter, Context context, Boolean b) {
+        this.mAdapter = mAdapter;
+        this.context = context;
+        this.b = b;
+        this.progressDialog = new ProgressDialog(context);
     }
+
     @Override
     protected void onPreExecute() {
         progressDialog.setMessage("Just a sec ...");
     }
+
     @Override
     protected void onPostExecute(Movie.MovieResult mR) {
         progressDialog.dismiss();
     }
+
     @Override
     protected Movie.MovieResult doInBackground(Void... params) {
         Retrofit restAdapter = new Retrofit.Builder()
@@ -47,13 +47,11 @@ public class getMov extends AsyncTask<Void,Void,Movie.MovieResult>{
         ApiJava service = restAdapter.create(ApiJava.class);
 
 
-
-
         boolean is_popular;
-        is_popular=mAdapter.isPopular(context);
-        if(is_popular)
-        {   b=true;
-            Call<Movie.MovieResult> call=service.getPopularMovies();
+        is_popular = mAdapter.isPopular(context);
+        if (is_popular) {
+            b = true;
+            Call<Movie.MovieResult> call = service.getPopularMovies();
             call.enqueue(new Callback<Movie.MovieResult>() {
                 @Override
                 public void onResponse(retrofit2.Response<Movie.MovieResult> movieResult) {
@@ -71,14 +69,14 @@ public class getMov extends AsyncTask<Void,Void,Movie.MovieResult>{
 
                 }
             });
-        }
-        else {
-            b=true;
-            Call<Movie.MovieResult> call=service.getRatedMovies();
+        } else {
+            b = true;
+            Call<Movie.MovieResult> call = service.getRatedMovies();
             call.enqueue(new Callback<Movie.MovieResult>() {
                 @Override
                 public void onResponse(retrofit2.Response<Movie.MovieResult> response) {
-                   MainActivity.mAdapter.setMovieList(response.body());                }
+                    MainActivity.mAdapter.setMovieList(response.body());
+                }
 
                 @Override
                 public void onFailure(Throwable t) {

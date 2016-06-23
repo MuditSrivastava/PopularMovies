@@ -21,17 +21,9 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-//import retrofit.Callback;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-//import retrofit.RequestInterceptor;
-//import retrofit.RestAdapter;
-//import retrofit.RetrofitError;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.GsonConverterFactory;
@@ -56,8 +48,6 @@ public class MovieDetail extends AppCompatActivity {
     private Trailers trailers;
     private TrailersAdapter trailersAdapter;
     ApiJava tmdbApi;
-    Intent shareIntent;
-    ShareActionProvider shareActionProvider;
     String Base_URL = "http://api.themoviedb.org/3/";
     Call<Reviews> callRv;
     private List<Trailers.SingleTrailer> listTr;
@@ -102,10 +92,6 @@ public class MovieDetail extends AppCompatActivity {
             f.setImageResource(R.drawable.ic_favorite_white_24dp);
         } else
             f.setImageResource(R.drawable.ic_favorite_border_white_24dp);
-
-
-
-
 
         trailersAdapter = new TrailersAdapter(listTr, this);
         final RecyclerView rvTrailer = (RecyclerView) findViewById(R.id.trailerRv);
@@ -166,15 +152,10 @@ public class MovieDetail extends AppCompatActivity {
 
             }
         });
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Base_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-
-
         tmdbApi = retrofit.create(ApiJava.class);
 
         Call<Trailers> callTr = tmdbApi.getTrailers(mMovie.getId());
@@ -206,12 +187,6 @@ public class MovieDetail extends AppCompatActivity {
                         e1.printStackTrace();
                     }
                 }
-               /* shareIntent.putExtra(Intent.EXTRA_TEXT, "https://www.youtube.com/watch?v=" + listTr.get(0).getKey() + "\n" + getResources().getString(R.string.message));
-                try {
-                    shareActionProvider.setShareIntent(shareIntent);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }*/
             }
 
             @Override

@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/activity_vertical_margin"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#000000"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"/>
 
                 <LinearLayout
@@ -127,7 +127,7 @@
                     android:paddingRight="16dp"
                     android:paddingBottom="8dp"
                     android:text="Trailers"
-                    android:textColor="#000000"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp" />
                 <View
                     android:layout_width="fill_parent"
@@ -135,7 +135,7 @@
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="16dp"
-                    android:background="#708090" />
+                    android:background="@color/horiz_line" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/trailerRv"
@@ -168,7 +168,7 @@
                     android:paddingRight="16dp"
                     android:paddingBottom="8dp"
                     android:text="Reviews"
-                    android:textColor="#000000"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp" />
                 <View
                     android:layout_width="fill_parent"
@@ -176,7 +176,7 @@
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="16dp"
-                    android:background="#708090" />
+                    android:background="@color/horiz_line" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/reviewRv"

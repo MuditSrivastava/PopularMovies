@@ -40,7 +40,6 @@ public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.ViewHo
         this.position = position;
         for (int i = 0; i < getItemCount(); i++) {
            Picasso.with(c).load("http://img.youtube.com/vi/" + list.get(position).getKey() + "/0.jpg").into(holder.i);
-//            Glide.with(this.c).load("http://img.youtube.com/vi/" + list.get(position).getKey() + "/0.jpg").crossFade().placeholder(R.drawable.placeholderbackdrop).error(R.drawable.placeholderbackdrop).centerCrop().into(holder.i);
             holder.t.setText(list.get(position).getTitle());
         }
     }
