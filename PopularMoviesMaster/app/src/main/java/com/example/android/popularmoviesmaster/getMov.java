@@ -10,9 +10,7 @@ import retrofit2.Callback;
 import retrofit2.GsonConverterFactory;
 import retrofit2.Retrofit;
 
-/**
- * Created by DELL on 6/27/2016.
- */
+
 public class getMov extends AsyncTask<Void, Void, Movie.MovieResult> {
 
     private MoviesAdapter mAdapter;

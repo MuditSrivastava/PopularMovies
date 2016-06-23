@@ -2,9 +2,7 @@ package com.example.android.popularmoviesmaster;
 
 import java.util.List;
 
-/**
- * Created by DELL on 6/25/2016.
- */
+
 public class Reviews {
     public List<SingleReview> results;
     public List<SingleReview> getReviews(){

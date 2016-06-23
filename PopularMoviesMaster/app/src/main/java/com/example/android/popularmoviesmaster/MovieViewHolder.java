@@ -5,9 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/**
- * Created by DELL on 6/27/2016.
- */
+
 public class MovieViewHolder extends RecyclerView.ViewHolder {
     public ImageView imageView;
     public TextView textView;

@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements communicator {
         }
         return super.onOptionsItemSelected(item);
     }
-   // fm.getSupportFragmentManager().beginTransaction().replace(R.id.fragment2, f).commit();
+   
     @Override
     public void respond(Movie movie) {
         this.movie = movie;

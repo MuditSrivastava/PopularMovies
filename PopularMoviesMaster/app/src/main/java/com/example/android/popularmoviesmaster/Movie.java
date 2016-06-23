@@ -8,42 +8,40 @@ import java.util.List;
 import ckm.simple.sql_provider.annotation.SimpleSQLColumn;
 import ckm.simple.sql_provider.annotation.SimpleSQLTable;
 
-/**
- * Created by DELL on 5/8/2016.
- */
+
 @SimpleSQLTable(table = "movieTable", provider = "MovieProvider")
 public class Movie implements Parcelable {
-   // @SerializedName("vote_average")
+   
    @SimpleSQLColumn("col_rating")
    @SerializedName("vote_average")
     private String rating;
 
-    //@SerializedName("title")
+   
     @SimpleSQLColumn("col_title")
     @SerializedName("title")
     private String title;
 
-    //@SerializedName("poster_path")
+   
     @SimpleSQLColumn("col_poster")
     @SerializedName("poster_path")
     private String poster;
 
-    //@SerializedName("release_date")
+   
     @SimpleSQLColumn("col_rdate")
     @SerializedName("release_date")
     private String rdate;
 
-    //@SerializedName("overview")
+   
     @SimpleSQLColumn("col_overview")
     @SerializedName("overview")
     private String overview;
 
-   // @SerializedName("id")
+   
    @SimpleSQLColumn("col_id")
    @SerializedName("id")
     private  int id;
 
-    //@SerializedName("backdrop_path")
+   
     @SimpleSQLColumn("col_backdrop")
     @SerializedName("backdrop_path")
     private String backdrop;

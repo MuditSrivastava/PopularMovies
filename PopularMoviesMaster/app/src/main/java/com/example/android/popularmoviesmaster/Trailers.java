@@ -2,9 +2,7 @@ package com.example.android.popularmoviesmaster;
 
 import java.util.List;
 
-/**
- * Created by DELL on 6/25/2016.
- */
+
 public class Trailers {
     private List<SingleTrailer> results;
     public List<SingleTrailer> getTrailers(){

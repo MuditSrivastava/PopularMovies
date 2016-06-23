@@ -4,9 +4,7 @@ import ckm.simple.sql_provider.UpgradeScript;
 import ckm.simple.sql_provider.annotation.ProviderConfig;
 import ckm.simple.sql_provider.annotation.SimpleSQLConfig;
 
-/**
- * Created by DELL on 6/26/2016.
- */
+
 @SimpleSQLConfig(
         name = "MovieProvider",
         authority = "com.example.android.popularmoviesmaster",

@@ -12,9 +12,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by DELL on 6/27/2016.
- */
+
 public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder>
 {
     private List<Movie> mMovieList;

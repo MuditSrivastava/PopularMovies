@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by DELL on 6/25/2016.
- */
+
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder>{
     Context c;
     int position;

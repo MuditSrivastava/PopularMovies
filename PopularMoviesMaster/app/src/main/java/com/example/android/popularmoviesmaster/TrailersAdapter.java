@@ -14,9 +14,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-/**
- * Created by DELL on 6/25/2016.
- */
 
 public class TrailersAdapter extends RecyclerView.Adapter<TrailersAdapter.ViewHolder> {
     List<Trailers.SingleTrailer> list;
