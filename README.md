@@ -29,6 +29,13 @@ You can obtain a key from [themoviedb.org](https://www.themoviedb.org)
 
 [balysv material-ripple](https://github.com/balysv/material-ripple)
 
+## What I Learned?
+- Building a fully featured app that looks and feel natural on the latest Android operating System.
+- Optimizing the UI experiencefor both phones and tablets.
+
+## General Project Guideline
+App conforms to common standards found in the [Android Nanodegree General Project Guidelines](http://udacity.github.io/android-nanodegree-guidelines/core.html)
+
 ## License
 
 ```
