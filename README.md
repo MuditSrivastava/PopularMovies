@@ -29,7 +29,7 @@ You can obtain a key from [themoviedb.org](https://www.themoviedb.org)
 
 [balysv material-ripple](https://github.com/balysv/material-ripple)
 
-## Concepts I Learned
+## Concepts Learned
 - Building a fully featured app that looks and feel natural on the latest Android operating System.
 - Optimizing the UI experience for both phones and tablets.
 
