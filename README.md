@@ -3,7 +3,7 @@ Android App that display details of Most Popular and Top Rated Movies.
 
 Also displays Movies while using offline.
 
-Created as a part of Udacity Android Developer Nanodegree 
+Created as a part of [Udacity Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801) 
 
 ## API used
 The Movie Data Base (TMDb)
@@ -31,7 +31,7 @@ You can obtain a key from [themoviedb.org](https://www.themoviedb.org)
 
 ## What I Learned?
 - Building a fully featured app that looks and feel natural on the latest Android operating System.
-- Optimizing the UI experiencefor both phones and tablets.
+- Optimizing the UI experience for both phones and tablets.
 
 ## General Project Guideline
 App conforms to common standards found in the [Android Nanodegree General Project Guidelines](http://udacity.github.io/android-nanodegree-guidelines/core.html)
