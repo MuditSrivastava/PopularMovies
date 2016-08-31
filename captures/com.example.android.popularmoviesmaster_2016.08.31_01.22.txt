@@ -1,0 +1,61 @@
+Applications Graphics Acceleration Info:
+Uptime: 6307019 Realtime: 6307019
+
+** Graphics info for pid 2968 [com.example.android.popularmoviesmaster] **
+
+Stats since: 268412642210ns
+Total frames rendered: 8993
+Janky frames: 8328 (92.61%)
+90th percentile: 69ms
+95th percentile: 81ms
+99th percentile: 105ms
+Number Missed Vsync: 2460
+Number High input latency: 1040
+Number Slow UI thread: 6126
+Number Slow bitmap uploads: 983
+Number Slow issue draw commands: 5637
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache          5644416 / 25165824
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache                   0 /  4194304
+  TessellationCache       77592 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8      524288 /   524288
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total   524288 /   524288
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  6246296 bytes, 5.96 MB
+
+Profile data in ms:
+
+	com.example.android.popularmoviesmaster/com.example.android.popularmoviesmaster.MainActivity/android.view.ViewRootImpl@300e637 (visibility=0)
+Stats since: 268412642210ns
+Total frames rendered: 8993
+Janky frames: 8328 (92.61%)
+90th percentile: 69ms
+95th percentile: 81ms
+99th percentile: 105ms
+Number Missed Vsync: 2460
+Number High input latency: 1040
+Number Slow UI thread: 6126
+Number Slow bitmap uploads: 983
+Number Slow issue draw commands: 5637
+
+View hierarchy:
+
+  com.example.android.popularmoviesmaster/com.example.android.popularmoviesmaster.MainActivity/android.view.ViewRootImpl@300e637
+  38 views, 41.34 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        38
+Total DisplayList:  41.34 kB
+
