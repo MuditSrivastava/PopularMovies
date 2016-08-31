@@ -33,7 +33,7 @@ You can obtain a key from [themoviedb.org](https://www.themoviedb.org)
 - Building a fully featured app that looks and feel natural on the latest Android operating System.
 - Optimizing the UI experience for both phones and tablets.
 
-#Screenshot
+## Screenshot
 <img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-220550.png"/>
 <img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-223835.png"/>
 <img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-223953.png"/>
