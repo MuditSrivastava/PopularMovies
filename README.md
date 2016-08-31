@@ -33,6 +33,17 @@ You can obtain a key from [themoviedb.org](https://www.themoviedb.org)
 - Building a fully featured app that looks and feel natural on the latest Android operating System.
 - Optimizing the UI experience for both phones and tablets.
 
+#Screenshot
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-220550.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-223835.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-223953.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-224203.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-225408.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-02-225450.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-03-150705.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-03-151223.png"/>
+<img width="30%" src="https://github.com/MuditSri-2908/PopularMovies/blob/master/captures/device-2016-09-03-151351.png"/>
+
 ## General Project Guideline
 App conforms to common standards found in the [Android Nanodegree General Project Guidelines](http://udacity.github.io/android-nanodegree-guidelines/core.html)
 
