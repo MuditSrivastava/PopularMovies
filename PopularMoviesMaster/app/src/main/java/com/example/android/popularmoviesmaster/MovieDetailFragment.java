@@ -32,6 +32,8 @@ import retrofit2.GsonConverterFactory;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import static com.example.android.popularmoviesmaster.FavActivity.favAdapter;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -239,7 +241,7 @@ public class MovieDetailFragment extends Fragment {
                         editor.apply();
                         getActivity().getContentResolver().insert(MovieTableTable.CONTENT_URI,MovieTableTable.getContentValues(mMovie,false));
                         f.setImageResource(R.drawable.ic_favorite_white_24dp);
-                                       MainActivity.favAdapter.notifyDataSetChanged();
+                            favAdapter.notifyDataSetChanged();
                     } else {
                         Snackbar.make(view, getResources().getText(R.string.rem_fav), Snackbar.LENGTH_SHORT).show();
                         int result = getActivity().getContentResolver().delete(MovieTableTable.CONTENT_URI,MovieTableTable.FIELD_COL_ID + "=?", new String[]{String.valueOf(mMovie.getId())});
@@ -247,7 +249,7 @@ public class MovieDetailFragment extends Fragment {
                         editor.remove(String.valueOf(mMovie.getId()));
                         editor.apply();
                         f.setImageResource(R.drawable.ic_favorite_border_white_24dp);
-                        MainActivity.favAdapter.notifyDataSetChanged();
+                        favAdapter.notifyDataSetChanged();
 
                     }
                 } catch (Exception e) {

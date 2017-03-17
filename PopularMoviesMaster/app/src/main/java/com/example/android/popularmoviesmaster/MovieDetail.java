@@ -30,6 +30,8 @@ import retrofit2.GsonConverterFactory;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+import static com.example.android.popularmoviesmaster.FavActivity.favAdapter;
+
 
 public class MovieDetail extends AppCompatActivity {
 
@@ -115,11 +117,13 @@ public class MovieDetail extends AppCompatActivity {
         rdate.setText(mMovie.getRdate());
         title.setText(mMovie.getTitle());
         description.setText(mMovie.getOverview());
+        String pos=mMovie.getPoster();
         Picasso.with(this)
-               .load(mMovie.getPoster())
+               .load("http://image.tmdb.org/t/p/w500"+pos)
              .into(poster);
+        String back=mMovie.getBackdrop();
         Picasso.with(this)
-                .load(mMovie.getBackdrop())
+                .load("http://image.tmdb.org/t/p/w500"+back)
                 .into(backdrop);
 
 
@@ -133,7 +137,7 @@ public class MovieDetail extends AppCompatActivity {
                         editor.apply();
                         getContentResolver().insert(MovieTableTable.CONTENT_URI,MovieTableTable.getContentValues(mMovie,false));
                         f.setImageResource(R.drawable.ic_favorite_white_24dp);
-                        MainActivity.favAdapter.notifyDataSetChanged();
+                        favAdapter.notifyDataSetChanged();
 
                     } else {
                         Snackbar.make(view, getResources().getText(R.string.rem_fav), Snackbar.LENGTH_SHORT).show();
@@ -142,7 +146,7 @@ public class MovieDetail extends AppCompatActivity {
                         editor.remove(String.valueOf(mMovie.getId()));
                         editor.apply();
                         f.setImageResource(R.drawable.ic_favorite_border_white_24dp);
-                        MainActivity.favAdapter.notifyDataSetChanged();
+                       favAdapter.notifyDataSetChanged();
 
 
                     }
@@ -244,6 +248,10 @@ public class MovieDetail extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (item.getItemId() == android.R.id.home)
+        {
+            finish();
+        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_detail_settings) {

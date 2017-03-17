@@ -7,7 +7,6 @@ import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -17,29 +16,30 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
 
 
-public class MainActivity extends AppCompatActivity implements communicator {
+import static com.example.android.popularmoviesmaster.MainActivity.m2;
+import static com.example.android.popularmoviesmaster.MainActivity.mAdapter;
+
+/**
+ * Created by DELL on 3/17/2017.
+ */
+
+public class FavActivity extends AppCompatActivity  {
     RecyclerView mRecyclerView;
     static int noGrid=2;
     public static int c=0;
-    public  static MoviesAdapter mAdapter;
-    public static Movie.MovieResult m2;
-    boolean b;
-    public Movie.MovieResult m;
     public static FragmentManager fm;
-    public static List<Movie> movies = new ArrayList<>();
-    int currstate=1;
-    public List<Movie> favMovieAsList;
     Toolbar toolbar;
-    getMov GETMOV;
     Movie movie;
-    public static int count=0;
-    public static MovieDetailFragment f;
-    public static communicator comm;
+    public static MoviesAdapter favAdapter;
+    public MovieDetailFragment f;
+
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -56,24 +56,33 @@ public class MainActivity extends AppCompatActivity implements communicator {
                 toast.show();}
         }
         setContentView(R.layout.activity_main);
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Favourites");
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView myTitle = (TextView) toolbar.getChildAt(0);
         Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/Satisfy-Regular.ttf");
         myTitle.setTypeface(tf,Typeface.BOLD);
-        comm = (communicator)this;
+        favAdapter = new MoviesAdapter(this);
+        favAdapter.setMovieList(m2);
+        favAdapter.notifyDataSetChanged();
+       /* if (getIntent().hasExtra(FAV_PIC)) {
+            favAdapter = getIntent().getParcelableExtra(FAV_PIC);
+        } else {
+            throw new IllegalArgumentException("Detail activity must receive a Hit parcelable");
+        }*/
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_View);
         mRecyclerView.setHasFixedSize(true);
         f = (MovieDetailFragment) getSupportFragmentManager().findFragmentById(R.id.fragment2);
         fm=getSupportFragmentManager();
 
         if(f==null){
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            noGrid=3;
-        }
-        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-            noGrid=2;
-        }}
+            if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                noGrid=3;
+            }
+            if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                noGrid=2;
+            }}
         else {
             if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 noGrid=2;
@@ -85,28 +94,11 @@ public class MainActivity extends AppCompatActivity implements communicator {
         }
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, noGrid));
-        mAdapter = new MoviesAdapter(this);
-        ScaleInAnimationAdapter scaleAdapter = new ScaleInAnimationAdapter(mAdapter);
-        scaleAdapter.setFirstOnly(false);
-        mRecyclerView.setAdapter(scaleAdapter);
+       // ScaleInAnimationAdapter scaleAdapter = new ScaleInAnimationAdapter(favAdapter);
+        //scaleAdapter.setFirstOnly(false);
+        mRecyclerView.setAdapter(favAdapter);
 
-        for (int i = 0; i < 25; i++) {
-            movies.add(new Movie());
-        }
-        m= new Movie.MovieResult(movies);
-        mAdapter.setMovieList(m);
-        count++;
-        GETMOV=new getMov(mAdapter,this,b);
-        GETMOV.progressDialog.show();
-        GETMOV.execute();
-    }
-    @Override
-    public void onStart()
-    {
-        super.onStart();
-        GETMOV=new getMov(mAdapter,this,b);
-        GETMOV.execute();
-        GETMOV.progressDialog.show();
+
     }
 
     @Override
@@ -123,6 +115,10 @@ public class MainActivity extends AppCompatActivity implements communicator {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        if (item.getItemId() == android.R.id.home)
+        {
+            finish();
+        }
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -130,32 +126,11 @@ public class MainActivity extends AppCompatActivity implements communicator {
             return true;
         }
 
-        if (id == R.id.action_fav) {
-                favMovieAsList =MovieTableTable.getRows(this.getContentResolver().query(MovieTableTable.CONTENT_URI, null, null, null, null), true);
-              //  favAdapter = new MoviesAdapter(this);
-                m2 = new Movie.MovieResult(favMovieAsList);
-              //  favAdapter.setMovieList(m2);
-             //
-              //  mRecyclerView.setAdapter(favAdapter);
-                currstate = 3;
-               // toolbar.setTitle("Favourites");
-            Intent intent = new Intent(this, FavActivity.class);
-            this.startActivity(intent);
-        }
+
         return super.onOptionsItemSelected(item);
     }
-   
-    @Override
-    public void respond(Movie movie) {
-        this.movie = movie;
-        if (f != null && f.isVisible()) {
-            f.getMov(movie);
-        }
-    }
-
-
-
 
 
 
 }
+

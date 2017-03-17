@@ -5,12 +5,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.System.load;
 
 
 public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder>
@@ -60,11 +66,16 @@ public class MoviesAdapter extends RecyclerView.Adapter<MovieViewHolder>
     public void onBindViewHolder(MovieViewHolder holder, int position)
     {
         Movie movie = mMovieList.get(position);
+        Picasso
+                .with(mContext)
+                .setLoggingEnabled(true);
 
+        String path = movie.getPoster();
         Picasso.with(mContext)
-                .load(movie.getPoster())
-                .resize(200,300)
+                .load("http://image.tmdb.org/t/p/w500"+path)
+                //.load("https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png")
                 .placeholder(R.color.colorAccent)
+                .error(R.color.white)
                 .into(holder.imageView);
 
        holder.textView.setText(movie.getTitle());

@@ -18,7 +18,7 @@ android {
         }
     }
     buildTypes.each{
-        it.buildConfigField 'String', 'MOBDB_API_KEY',"\"write_your_key_here\""
+        it.buildConfigField 'String', 'MOBDB_API_KEY',"\"79ddb46b79433c0ca0ffbc450face4c6\""
     }
 }
 

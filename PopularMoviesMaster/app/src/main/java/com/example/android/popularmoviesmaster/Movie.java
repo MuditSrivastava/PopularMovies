@@ -49,7 +49,7 @@ public class Movie implements Parcelable {
 
     public Movie() {}
 
-    protected Movie(Parcel in) {
+   protected Movie(Parcel in) {
         rating =in.readString();
         title = in.readString();
         poster = in.readString();
@@ -59,7 +59,7 @@ public class Movie implements Parcelable {
         backdrop = in.readString();
     }
 
-    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+   public static final Creator<Movie> CREATOR = new Creator<Movie>() {
         @Override
         public Movie createFromParcel(Parcel in) {
             return new Movie(in);
@@ -86,7 +86,8 @@ public class Movie implements Parcelable {
     }
 
     public String getPoster() {
-        return "http://image.tmdb.org/t/p/w500" + poster;
+
+        return poster;
     }
     public void setPoster(String poster) {
         this.poster = poster;
@@ -110,14 +111,15 @@ public class Movie implements Parcelable {
     public void setId(int id){this.id=id;}
 
     public String getBackdrop() {
-        return "http://image.tmdb.org/t/p/w500"  + backdrop;
+
+        return  backdrop;
     }
     public void setBackdrop(String backdrop) {
         this.backdrop = backdrop;
     }
 
 
-    @Override
+   @Override
     public int describeContents() {
         return 0;
     }
